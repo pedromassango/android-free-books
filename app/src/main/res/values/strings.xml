@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Free Books</string>
+    <string name="app_books_api_key" translatable="false">AIzaSyDaDyP3vcP1kWYRRuuVJBCk6Zs_2C49tno</string>
+
+    <string name="shr_product_category">Increase your Knowledge</string>
+    <string name="shr_product_description">Reading is not living, but it is a way back to life.</string>
+    <string name="shr_category_clothing">Clothing</string>
+    <string name="shr_category_home">Home</string>
+    <string name="shr_category_popsicles">Popsicles</string>
+    <string name="search">Search</string>
+    <string name="type_a_query">Type a book name</string>
+    <string name="cancel">Cancel</string>
+    <string name="type_here">Type here</string>
+    <string name="loading">Loading...</string>
+</resources>
