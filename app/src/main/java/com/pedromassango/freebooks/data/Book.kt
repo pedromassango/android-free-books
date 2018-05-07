@@ -16,17 +16,25 @@
 
 package com.pedromassango.freebooks.data
 
+import android.os.Parcel
+import android.os.Parcelable
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import com.pedromassango.freebooks.IBooksService
+import java.io.Serializable
 
 /**
  * A product entry in the list of products.
  */
-class Book {
+class Book : Serializable {
 
     @SerializedName("id")
     var id: String? = null
     @SerializedName("title")
     var title: String? = null
     var volumeInfo: IBooksService.VolumeInfo? = null
+    @SerializedName("accessInfo")
+    @Expose
+    var accessInfo: IBooksService.AccessInfo? = null
+
 }

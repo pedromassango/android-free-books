@@ -6,6 +6,7 @@ import com.pedromassango.freebooks.data.Book
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
+import java.io.Serializable
 
 
 /**
@@ -21,7 +22,7 @@ interface IBooksService {
         var items = ArrayList<Book>()
     }
 
-    class VolumeInfo {
+    class VolumeInfo : Serializable {
         @SerializedName("title")
         @Expose
         var title: String? = null
@@ -39,13 +40,19 @@ interface IBooksService {
         var previewLink: String? = null
     }
 
-    class ImageLinks {
+    class ImageLinks : Serializable {
         @SerializedName("smallThumbnail")
         @Expose
         var smallThumbnail: String? = null
         @SerializedName("thumbnail")
         @Expose
         var thumbnail: String? = null
+    }
+
+    class AccessInfo: Serializable {
+        @SerializedName("webReaderLink")
+        @Expose
+        var webReaderLink: String? = null
     }
 
     @GET("volumes")

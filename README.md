@@ -8,6 +8,7 @@ Um app para pesquisa, leitura e download de livros diversos.
 - Read Books
 - Download Books
 - Add Internationalization (multiple languages)
+- Make app load the PDF  inside the webView instead of start some intent.
 
 ## Screenshots
 

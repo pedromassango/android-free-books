@@ -1,10 +1,13 @@
 package com.pedromassango.freebooks.activities.main
 
+import android.content.Intent
+import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.pedromassango.freebooks.ImageRequester
 import com.pedromassango.freebooks.R
+import com.pedromassango.freebooks.activities.reader.BookReaderActivity
 import com.pedromassango.freebooks.data.Book
 import kotlinx.android.synthetic.main.row_book_entry.view.*
 
@@ -26,9 +29,16 @@ class ProductViewHolder internal constructor(parent: ViewGroup) :
             row_book_title.text = bookInfo!!.title
             row_book_price.text = String.format("Pages: %s", bookInfo.pageCount)
             imageRequester.setImageFromUrl(row_book_image, bookInfo.imageLinks?.thumbnail)
-            // click lister for an book
+
+            // click lister for an book (should open activity to read the book)
             setOnClickListener {
-                //TODO: open activity to read a book
+                val i = Intent(itemView.context, BookReaderActivity::class.java)
+                val b = Bundle()
+                b.putSerializable(BookReaderActivity.BOOK_INTENT_KEY, book)
+                i.putExtras(b)
+
+                // call activity to read the book
+                itemView.context.startActivity(i)
             }
         }
     }
